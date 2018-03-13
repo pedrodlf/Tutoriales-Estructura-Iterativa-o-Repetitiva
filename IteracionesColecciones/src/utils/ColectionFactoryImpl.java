@@ -6,11 +6,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-public class ColectionFactory {
+import interfaces.Colectionfactory;
+
+public class ColectionFactoryImpl implements Colectionfactory {
 
 	
-	
-	public static List<Integer> crearListadeEnteros(){
+	@Override
+	public  List<Integer> crearListadeEnteros(){
 		List<Integer> resultado = new ArrayList<>();
 		
 		for(int i = 1;i <=100;i++)resultado.add(i);
@@ -18,8 +20,8 @@ public class ColectionFactory {
 		
 		return resultado;
 	} 
-	
-	public static Map<Integer, Integer> crearMapDeEnteros(){
+	@Override
+	public Map<Integer, Integer> crearMapDeEnteros(){
 		Map<Integer, Integer> resultado = new HashMap<>();
 		
 		for(int i = 1;i <=100;i++)resultado.put(i, i);
@@ -27,7 +29,8 @@ public class ColectionFactory {
 		return resultado;
 	}
 	
-	public static HashSet<Integer> crearHashSetDeEnteros(){
+	@Override
+	public HashSet<Integer> crearHashSetDeEnteros(){
 		HashSet<Integer> resultado = new HashSet<>();
 		
 		for(int i =1; i<=100;i++)resultado.add(i);
