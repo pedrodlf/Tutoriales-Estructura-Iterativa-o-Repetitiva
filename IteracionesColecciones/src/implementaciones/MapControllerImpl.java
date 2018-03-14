@@ -1,7 +1,10 @@
 package implementaciones;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import javax.xml.crypto.dsig.spec.HMACParameterSpec;
 
 import interfaces.AppController;
 import interfaces.ColecctionController;
@@ -27,7 +30,7 @@ public class MapControllerImpl implements MapController {
 			entrada = entrada.toUpperCase();
 			switch (entrada) {
 			case EntradasRequest.SI:
-				crearColeccion();
+				crearColeccionMthod();
 				break;
 			case EntradasRequest.NO:
 				app.iniciar();
@@ -37,9 +40,41 @@ public class MapControllerImpl implements MapController {
 		}else inicio();
 
 	}
+	@Override
+	public void crearColeccionMthod() {
+		System.out.println("Podemos trabajar con un Map autogenerado de 100 elementos"
+				+" o crear una nosotros mismos");
+					System.out.println("¿quieres trabajar con el autogenerado?");
+					String entrada = sc.next();
+					
+					if(resolver.IsSiNO(entrada)) {
+						if(entrada.equalsIgnoreCase(EntradasRequest.SI)) {
+							Map<Integer, Integer> map = factory.crearMapDeEnteros();
+							encuesta(map);
+						}else {
+							crearColecionCustom();
+						}
+					}else {
+						crearColeccion();
+					}}
 
 	@Override
-	public void crearColeccion() {
+	public void crearColecionCustomMthod() {
+		Map<Integer, Integer> map = new HashMap<>();
+		System.out.println("Creando un Mapa");
+		System.out.println("inroduce un entero que determinara el numero de elementos del mapa");
+		String in = sc.next();
+		if(resolver.isNumValido(in)) {
+			 map = factory.crearMapDeEnterosConDimension(Integer.parseInt(in));
+			
+			 encuesta(map);
+		}else crearColecionCustom();
+		
+	}
+	
+
+	@Override
+	public Map<Integer, Integer> crearColeccion() {
 		
 		System.out.println("Podemos trabajar con un Map autogenerado de 100 elementos"
 	+" o crear una nosotros mismos");
@@ -49,7 +84,7 @@ public class MapControllerImpl implements MapController {
 		if(resolver.IsSiNO(entrada)) {
 			if(entrada.equalsIgnoreCase(EntradasRequest.SI)) {
 				Map<Integer, Integer> map = factory.crearMapDeEnteros();
-				encuesta(map);
+				return map;
 			}else {
 				crearColecionCustom();
 			}
@@ -57,20 +92,22 @@ public class MapControllerImpl implements MapController {
 			crearColeccion();
 		}
 		
-		
+		return null;
 
 	}
 	
 	@Override
-	public void crearColecionCustom() {
+	public Map<Integer, Integer> crearColecionCustom() {
+		Map<Integer, Integer> map = new HashMap<>();
 		System.out.println("Creando un Mapa");
 		System.out.println("inroduce un entero que determinara eol numero de elementos del mapa");
 		String in = sc.next();
 		if(resolver.isNumValido(in)) {
-			Map<Integer, Integer> map = factory.crearMapDeEnterosConDimension(Integer.parseInt(in));
-			encuesta(map);
+			 map = factory.crearMapDeEnterosConDimension(Integer.parseInt(in));
+			
+			 return map;
 		}else crearColecionCustom();
-		
+		return map;
 	}
 
 	@Override
@@ -101,6 +138,8 @@ public class MapControllerImpl implements MapController {
 		
 		
 	}
+
+	
 
 	
 

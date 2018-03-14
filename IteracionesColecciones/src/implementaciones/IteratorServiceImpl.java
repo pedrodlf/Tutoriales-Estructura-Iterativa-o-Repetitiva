@@ -28,4 +28,25 @@ public class IteratorServiceImpl implements IteratorService {
 		else return false;
 	}
 
+	@Override
+	public void pintar(List<Integer> entrada) {
+		System.out.println("Pintando lista de "+entrada.size()+" elementos");
+		entrada.forEach(i -> System.out.println("posicion "+i+" = "+i));
+		
+	}
+
+	@Override
+	public void pintar(Map<Integer, Integer> entrada) {
+		System.out.println("Pintando Map de "+entrada.size()+ " elementos");
+		entrada.forEach((k,v) -> System.out.println("Map<\""+k+"\","+v+">"));
+		
+	}
+
+	@Override
+	public void pintar(HashSet<Integer> entrada) {
+		System.out.println("Pintando HasSet de "+entrada.size()+" elementos");
+		entrada.forEach(i -> System.out.println("posicion "+i+" = "+i));
+		
+	}
+
 }
