@@ -1,9 +1,9 @@
-package implementaciones;
+package controladores.impl;
 
 import java.util.Scanner;
 
-import interfaces.AppController;
-import interfaces.ColecctionController;
+import controladores.AppController;
+import controladores.ColecctionController;
 import utils.EntradaResolver;
 import utils.EntradasRequest;
 
