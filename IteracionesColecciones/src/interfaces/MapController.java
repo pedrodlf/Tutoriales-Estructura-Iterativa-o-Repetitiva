@@ -9,4 +9,5 @@ public interface MapController extends ColecctionController {
 	public void compararVelocidad(Map<Integer, Integer> map);
 	public void encuesta(Map<Integer, Integer> map);
 	
+	
 }

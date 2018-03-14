@@ -13,6 +13,7 @@ import utils.EntradasRequest;
 public class MapControllerImpl implements MapController {
 
 	EntradaResolver resolver = new EntradaResolver();
+	Colectionfactory factory = new ColectionFactoryImpl();
 	AppController app = new AppControllerImpl();
 	Scanner sc = new Scanner(System.in);
 	@Override
@@ -39,7 +40,7 @@ public class MapControllerImpl implements MapController {
 
 	@Override
 	public void crearColeccion() {
-		Colectionfactory factory = new ColectionFactoryImpl();
+		
 		System.out.println("Podemos trabajar con un Map autogenerado de 100 elementos"
 	+" o crear una nosotros mismos");
 		System.out.println("¿quieres trabajar con el autogenerado?");
@@ -50,9 +51,7 @@ public class MapControllerImpl implements MapController {
 				Map<Integer, Integer> map = factory.crearMapDeEnteros();
 				encuesta(map);
 			}else {
-				System.out.println("Creando un Mapa");
-				System.out.println("inroduce un entero que determinara eol numero de elementos del mapa");
-				String in = sc.next();
+				crearColecionCustom();
 			}
 		}else {
 			crearColeccion();
@@ -60,6 +59,18 @@ public class MapControllerImpl implements MapController {
 		
 		
 
+	}
+	
+	@Override
+	public void crearColecionCustom() {
+		System.out.println("Creando un Mapa");
+		System.out.println("inroduce un entero que determinara eol numero de elementos del mapa");
+		String in = sc.next();
+		if(resolver.isNumValido(in)) {
+			Map<Integer, Integer> map = factory.crearMapDeEnterosConDimension(Integer.parseInt(in));
+			encuesta(map);
+		}else crearColecionCustom();
+		
 	}
 
 	@Override
@@ -82,9 +93,16 @@ public class MapControllerImpl implements MapController {
 
 	@Override
 	public void encuesta(Map<Integer, Integer> map) {
-		// TODO Auto-generated method stub
+		System.out.println("Elige una de las siguientes opciones:");
+		System.out.println("1- volver al inicio");
+		System.out.println("2- Cosultar si el mapa contiene un determinado valor");
+		System.out.println("3- Comparar con otra coleccion");
+		System.out.println("4- FINALIZAR PROGRAMA");
+		
 		
 	}
+
+	
 
 
 

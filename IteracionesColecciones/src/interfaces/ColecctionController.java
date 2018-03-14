@@ -6,6 +6,7 @@ public interface ColecctionController {
 
 	public void inicio();
 	public void crearColeccion();
+	public void crearColecionCustom();
 	
 	
 }
