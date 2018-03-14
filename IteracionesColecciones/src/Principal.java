@@ -13,6 +13,7 @@ public class Principal {
 		System.out.println("--------INICIO DEL TESTEADOR DE COLECCIONES------------");
 		controller.iniciar();
 		
+		
 
 	}
 

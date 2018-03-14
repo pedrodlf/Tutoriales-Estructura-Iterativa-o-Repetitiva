@@ -59,7 +59,6 @@ public class AppControllerImpl implements AppController {
 
 	@Override
 	public void finalizarPrograma() {
-		System.out.println("----------- FIN DE PROGRAMA----------------");
 		System.exit(0);
 		
 	}
