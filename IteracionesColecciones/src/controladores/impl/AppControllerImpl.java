@@ -47,13 +47,13 @@ public class AppControllerImpl implements AppController {
 
 	@Override
 	public void analizarList() {
-		ColecctionController controller = null;
+		ColecctionController controller = new ListControllerImpl();
 		controller.inicio();
 	}
 
 	@Override
 	public void analizarHasSet() {
-		ColecctionController controller = null;
+		ColecctionController controller = new HasSetControllerImpl();
 		controller.inicio();
 	}
 
