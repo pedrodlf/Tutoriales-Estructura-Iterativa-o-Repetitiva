@@ -10,7 +10,8 @@ public class EntradasRequest {
 	public static final String FINALIZAR_PROGRAMA = "FINALIZAR PROGRAMA";
 	public static final String COMPARAR = "COMPARAR CON OTRA COLECCION";
 	public static final String VOLVER_AL_INICIO = "VOLVER AL INICIO";
-	public static final String CONTIENE = "CONSULTAR SI CONTIENE UN VALOR ";
+	public static final String CONTIENE = "CONSULTAR SI CONTIENE UN VALOR";
+	public static final String PINTAR = "MOSTRAR LOS DATOS";
 	
 	
 }

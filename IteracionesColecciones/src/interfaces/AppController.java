@@ -7,5 +7,6 @@ public interface AppController {
 	public void analizarMap();
 	public void analizarList();
 	public void analizarHasSet();
+	public void finalizarPrograma();
 	
 }

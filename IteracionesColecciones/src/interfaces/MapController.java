@@ -9,7 +9,7 @@ public interface MapController extends ColecctionController {
 	public Map<Integer, Integer> crearColeccion();
 	public Map<Integer, Integer> crearColecionCustom();
 	public void verContenido(Map<Integer, Integer> map);
-	public boolean ContieneElemento(Map<Integer, Integer> map, int valor);
+	public void contieneElemento(Map<Integer, Integer> map);
 	public void compararVelocidad(Map<Integer, Integer> map);
 	public void encuesta(Map<Integer, Integer> map);
 	
