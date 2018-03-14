@@ -1,8 +1,8 @@
 
 
 
-import implementaciones.AppControllerImpl;
-import interfaces.AppController;
+import controladores.AppController;
+import controladores.impl.AppControllerImpl;
 
 public class Principal {
 
