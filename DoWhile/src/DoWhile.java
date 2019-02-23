@@ -8,8 +8,8 @@ public class DoWhile {
 		int cont = 0;
 		do {
 			cont++;
-			System.out.println(cont);
-
+			System.out.print("-"+cont);
+		
 		} while (cont < a);
 
 	}
